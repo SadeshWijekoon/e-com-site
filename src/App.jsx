@@ -2,7 +2,7 @@
 import './App.css';
 import Body from './Componts/Body/Body';
 import Footer from './Componts/Footer/Footer';
-import Header from './Componts/Header/header';
+import Header from './Componts/Header/Header';
 
 
 

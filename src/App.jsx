@@ -8,7 +8,7 @@ import Header from './Componts/Header/Header';
 
 function App() {
   return (
-    <div className="">
+    <div className="w-full h-screen">
       <Header/>
       <Body/>
       <Footer/>

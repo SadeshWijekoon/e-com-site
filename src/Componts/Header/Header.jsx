@@ -11,9 +11,12 @@ const Header = () => {
       {/*header left*/}
       <div className='flex items-center'>
         <IconButton sx={{color:'red'}}>
-        <MenuIcon sx={
-          {color:'#800909'}
-        }/>
+        <MenuIcon sx={{
+        color: '#4c4f4d',
+        '&:hover': {
+          color: '#800909',
+        },
+      }} />
         </IconButton>
         <h1 className='ml-2 text-sm font-bold'>Sadesh<span className='text-[#800909]'>Wijekoon</span></h1>
 
@@ -23,16 +26,19 @@ const Header = () => {
            placeholder='Search' 
            className='hidden  sm:inline-block ml-1 outline-none p-2 font-semibold text-sm w-[200px] bg-inherit '/>
           <IconButton sx={{color:'red'}}>
-          <SearchIcon sx={
-          {color:'#800909'}
-           }/>
+          <SearchIcon sx={{
+        color: '#4c4f4d',
+        '&:hover': {
+          color: '#800909',
+        },
+      }}/>
           </IconButton> 
         </div>
 
         </div>
       {/*header right*/}
        <IconButton  sx={{color:'red'}}>
-         <ShoppingCartIcon className='text-[#800909]'/> {/*tailwind type*/}
+         <ShoppingCartIcon className='text-[#4c4f4d] hover:text-[#800909]'/> {/*tailwind type*/}
        </IconButton>  
     </header>
   )

@@ -3,6 +3,7 @@ import { Autoplay } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 
+
 const adsElements = [
   {
     imageUrl: 'https://images6.alphacoders.com/134/1348908.jpeg',
@@ -32,11 +33,13 @@ const Add = () => {
       }}
       navigation={true}
       modules={[Autoplay]}
-      className='rounded-lg overflow-hidden'
-    >
-      {adsElements.map(({ imageUrl }, index) => (
-        <AddUnit key={index} imageUrl={imageUrl} id={index} />
-      ))}
+      className='rounded-lg overflow-hidden'>
+
+       {adsElements.map(({imageUrl},index)=>
+       <SwiperSlide key={index}>
+          <AddUnit   imageUrl={imageUrl} id={index}/>
+      </SwiperSlide>)}
+       
     </Swiper>
   );
 };
@@ -44,11 +47,11 @@ const Add = () => {
 export default Add;
 
 const AddUnit = ({ imageUrl, id }) => (
-  <SwiperSlide>
+  
     <img
       src={imageUrl}
       alt={`ad${id}`}
       className='w-full object-contain rounded-lg'
     />
-  </SwiperSlide>
+  
 );

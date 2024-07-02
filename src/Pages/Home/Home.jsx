@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="pt-[200px]">
       Home
-    </div>
+     </div>
   )
 }
 

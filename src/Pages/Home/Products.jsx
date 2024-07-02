@@ -1,31 +1,37 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Grid, Pagination } from 'swiper/modules';
+import { Grid, Mousewheel, Pagination } from 'swiper/modules';
+import { IconButton } from '@mui/material';
+
+import 'swiper/css';
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
+import './Style.css'
 
 const productArr=[{
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     price:'100',
-    productTitle:'Coffe',
+    productTitle:'Coffe Xl',
 },
 {
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     price:'100',
-    productTitle:'Coffe',
+    productTitle:'Coffe Large',
 },{
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     price:'100',
-    productTitle:'Coffe',
+    productTitle:'Coffe Medium',
 },{
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     price:'100',
-    productTitle:'Coffe',
+    productTitle:'Coffe Small',
 },{
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     price:'100',
-    productTitle:'Coffe',
+    productTitle:'Coffe Regular',
 },{
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     price:'100',
-    productTitle:'Coffe',
+    productTitle:'Coffe Starbuck',
 },{
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     price:'100',
@@ -42,23 +48,28 @@ const productArr=[{
 
 const Products = ({title,rowsCount,slidesPerView}) => {
   return (
-    <section>
-     <h1>{title}</h1>
+    <section className=' w-full mt-6 '>
+     <h1 className='text-lg font-semibold mb-3'>{title}</h1>
      <Swiper
         slidesPerView={Number(slidesPerView)}
         grid={{
           rows:Number(rowsCount),
         }}
-        spaceBetween={30}
+        spaceBetween={10}
         pagination={{
           clickable: true,
         }}
-        modules={[Grid, Pagination]}
+        mousewheel={true}
+        modules={[Grid, Pagination,Mousewheel]}
         
       >
         {productArr.map(({imageUrl,price,productTitle},index)=>
         <SwiperSlide key={index}>
-          <ProductUnit imageUrl={imageUrl} price={price} productTitle={productTitle}id={index}/>
+          <ProductUnit 
+          imageUrl={imageUrl} 
+          price={price} 
+          productTitle={productTitle}
+          id={index}/>
         </SwiperSlide>)}
         
       </Swiper>
@@ -69,9 +80,24 @@ const Products = ({title,rowsCount,slidesPerView}) => {
 export default Products;
 
 const ProductUnit=({imageUrl,price,productTitle,id})=>
-    <div className=' w-full'>
-        <img src={imageUrl} alt={`product_unit_${id}`}
-        className=' w-full object-contain'/>
-        <h3>{productTitle}</h3>
-        <h3>LKR. {price}/-</h3>
+    <IconButton sx={{
+        padding:'4px',
+        borderRadius:'5px',
+        color:'red',
+        margin:'3px',
+        marginBottom:'30px'
+        
+     }}>
+    <div className=' w-full '>
+     
+       <img 
+          src={imageUrl} 
+          alt={`product_unit_${id}`}
+          className=' w-full object-contain'/>
+        <h3 className='text-sm font-semibold text-[black]'>{productTitle}</h3>
+        <h3 className='text-stone-950 text-lg font-bold'>LKR. {price}/-</h3>
     </div>
+      
+     </IconButton> 
+       
+    

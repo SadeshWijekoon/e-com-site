@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 
 const Header = () => {
+  console.log('header');
 
  const [isSearch,setIsSearch]=useState(false)
 
@@ -22,25 +23,46 @@ const Header = () => {
         },
       }} />
         </IconButton>
-        <h1 className='ml-2 text-sm font-bold'>Sadesh<span className='text-[#800909]'>Wijekoon</span></h1>
+        <h1 style={{
+            display: window.innerWidth<640? 
+             isSearch ?  
+               ' none':  
+               ' inline-block':
+               'inline-block'
+           }} className='ml-2 text-sm font-bold'>
+          Sadesh <span className='text-custom-red'>Wijekoon</span>
+        </h1>
 
-        <div className='overflow-hidden ml-2 flex items-center rounded-full bg-[#f8dddd]' > {/* bg-[#e0c3c3]*/}
+        <div style={{
+            backgroundColor: window.innerWidth<640? 
+             isSearch ?  
+               ' #f8dddd':  
+               ' inherit':
+               '#f8dddd'
+           }} className='overflow-hidden ml-2 flex items-center rounded-full bg-[#f8dddd]' > {/* bg-[#e0c3c3]*/}
           <input 
            type='text' 
            placeholder='Search' 
            style={{
-            display: window.innerWidth<640? isSearch ? 'inline-block': 'none':
-            'inline-block'
+            display: window.innerWidth<640? 
+             isSearch ?  
+               'inline-block':  
+               'none':
+               'inline-block'
            }}
            className='hidden  sm:inline-block ml-1 outline-none p-2 
            font-semibold text-sm w-[200px] bg-inherit '/>
-          <IconButton onClick={()=>setIsSearch(true)} sx={{color:'red'}}>
+          <IconButton onClick={()=>{
+            if(window.innerWidth<640){
+              setIsSearch(!isSearch)
+            }
+          }} sx={{color:'red'}}>
           <SearchIcon  sx={{
         color: '#4c4f4d',
         '&:hover': {
           color: '#800909',
         },
-      }}/>
+      }} />
           </IconButton> 
         </div>
 

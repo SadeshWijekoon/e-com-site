@@ -46,7 +46,7 @@ const productArr=[{
     productTitle:'Coffe',
 },]
 
-const Products = ({title,rowsCount,slidesPerView}) => {
+const Products = ({title}) => {
   return (
     <section style={{
       boxShadow:'rgba(0, 0, 0, 0.35) 0px 5px 15px',
@@ -54,9 +54,9 @@ const Products = ({title,rowsCount,slidesPerView}) => {
      className=' w-full mt-6  p-2'>
      <h1 className='text-lg font-semibold mb-3 ml-2 mt-2'>{title}</h1>
      <Swiper
-        slidesPerView={Number(slidesPerView)}
+        slidesPerView={3}
         grid={{
-          rows:Number(rowsCount),
+          rows:1,
         }}
         spaceBetween={10}
         pagination={{

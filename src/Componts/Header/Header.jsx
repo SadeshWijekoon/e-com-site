@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header className='fixed top-0 left-0 z-[100] drop-shadow-header-shadow w-full
-     py-5 px-2 bg-my-background flex items-center justify-between'>
+     py-3 px-2 bg-my-background flex items-center justify-between'>
       {/*header left*/}
       <div className='flex items-center'>
         <IconButton sx={{color:'red'}}>
@@ -48,9 +48,10 @@ const Header = () => {
              isSearch ?  
                'inline-block':  
                'none':
-               'inline-block'
+               'inline-block',
+               transition:'all 400ms ease-in-out'
            }}
-           className='hidden  sm:inline-block ml-1 outline-none p-2 
+           className='   hidden  sm:inline-block ml-1 outline-none p-2 
            font-semibold text-sm w-[200px] bg-inherit '/>
           <IconButton onClick={()=>{
             if(window.innerWidth<640){
@@ -69,7 +70,11 @@ const Header = () => {
         </div>
       {/*header right*/}
        <IconButton  sx={{color:'red'}}>
-         <ShoppingCartIcon className='text-[#4c4f4d] hover:text-[#800909]'/> {/*tailwind type*/}
+          <div className=' relative  p-1'>
+          <ShoppingCartIcon className='text-[#4c4f4d] hover:text-[#800909]'/>
+          <div className=' absolute top-[2px] right-0 text-white  text-[7px] font bg-[#800909] flex items-center justify-center w-3 h-3 rounded-full   '>2</div>
+          </div>
+          {/*tailwind type*/}
        </IconButton>  
     </header>
   )

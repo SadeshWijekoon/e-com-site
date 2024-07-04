@@ -10,27 +10,27 @@ const categoryArr=[
   {
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     title:'Category Title 2',
-    categoryId:'category1',
+    categoryId:'category2',
   },
   {
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     title:'Category Title 3',
-    categoryId:'category1',
+    categoryId:'category3',
   },
   {
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     title:'Category Title 4',
-    categoryId:'category1',
+    categoryId:'category4',
   },
   {
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     title:'Category Title 5',
-    categoryId:'category1',
+    categoryId:'category5',
   },
   {
     imageUrl:'https://images6.alphacoders.com/134/1348908.jpeg',
     title:'Category Title 6',
-    categoryId:'category1',
+    categoryId:'category6',
 
   },
 ]
@@ -44,8 +44,13 @@ const Categoty = () => {
      
        <h1 className='text-lg font-semibold mb-3 ml-2 mt-2'>Main Categories</h1>
        <div className="grid grid-cols-3 grid-rows-[auto] gap-4">
-         {categoryArr.map(({imageUrl,title,categoryId},index)=><CategoryIteams key={index}
-         imageUrl={imageUrl} title={title} categoryId={categoryId}/>)}
+         {categoryArr.map(({imageUrl,title,categoryId},index)=>
+         <CategoryUnitIteams 
+          key={index}
+          imageUrl={imageUrl} 
+          title={title} 
+          categoryId={categoryId}
+          />)}
          
        </div>
       
@@ -56,7 +61,7 @@ const Categoty = () => {
 
 export default Categoty;
 
-const CategoryIteams=({imageUrl,title,categoryId})=>(
+const CategoryUnitIteams=({imageUrl,title,categoryId})=>(
   <Link to={`/category/${categoryId}`} >
 <IconButton sx={{
   color:'gray',

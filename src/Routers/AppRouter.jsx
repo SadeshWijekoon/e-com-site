@@ -6,6 +6,7 @@ import Login from "../Pages/Login/Login";
 import UserProtected from "./UserProtected";
 import Categoty from "../Pages/Category/Categoty";
 import Categoryitems from "../Pages/Categoryitems/Categoryitems";
+import ItemPage from "../Pages/ItemPage/ItemPage";
 
 const router= createBrowserRouter([
     {
@@ -25,7 +26,16 @@ const router= createBrowserRouter([
                    },
                    {
                     path:':categoryId',
-                    element:<Categoryitems/>
+                    children:[
+                      {
+                        index:'true',
+                        element:<Categoryitems/>
+                      },
+                      {
+                        path:':iteamId',
+                        element:<ItemPage/>
+                      }  
+                    ]
                    }
                 ]
             },

@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header className='fixed top-0 left-0 z-[100] drop-shadow-header-shadow w-full
-     py-3 px-2 bg-my-background flex items-center justify-between'>
+     p-2 px-2 bg-my-background flex items-center justify-between'>
       {/*header left*/}
       <div className='flex items-center'>
         <IconButton sx={{color:'red'}}>

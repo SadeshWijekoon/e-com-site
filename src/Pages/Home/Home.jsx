@@ -5,7 +5,7 @@ import Loading from "../../Componts/Loading/Loading";
 
 
 const Home = () => {
-   const[loading,setLoading]=useState(true)
+   const[loading,setLoading]=useState(false)
 
    if(loading) {
     return <Loading/>

@@ -1,0 +1,11 @@
+
+
+const Categoty = () => {
+  return (
+    <div className="px-5 py-[100px] pt-[100px] w-full h-screen overflow-y-scroll">
+       Category
+    </div>
+  )
+}
+
+export default Categoty;

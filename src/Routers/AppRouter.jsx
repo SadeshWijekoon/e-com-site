@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import User from "../Pages/User/User";
 import Login from "../Pages/Login/Login";
 import UserProtected from "./UserProtected";
+import Categoty from "../Pages/Category/Categoty";
 
 const router= createBrowserRouter([
     {
@@ -15,10 +16,15 @@ const router= createBrowserRouter([
                 element:<Home/>,
             },
             {
+                path:'/category',
+                element:<Categoty/>,
+            },
+            
+            {
                 element:<UserProtected/>,
                 children:[
                     {
-                        path:'user',
+                        path:'profile',
                         element:<User/>
                     }
                 ]

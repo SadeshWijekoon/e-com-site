@@ -3,6 +3,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [whoIsClick,setWhoIsClicke]=useState({
@@ -60,6 +61,7 @@ const FooterIcon=({Icon,iconText,clickFun})=>{
 
 
  return(
+   <Link to={iconText==='Home'?'/':`/${String(iconText).toLowerCase()}`}>
     <IconButton 
     sx={{
      padding:'4px',
@@ -79,7 +81,7 @@ const FooterIcon=({Icon,iconText,clickFun})=>{
     </div>
     
     
-  </IconButton>
+  </IconButton></Link>
   )};
 
 

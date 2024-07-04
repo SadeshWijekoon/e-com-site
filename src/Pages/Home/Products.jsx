@@ -86,7 +86,7 @@ const ProductUnit=({imageUrl,price,productTitle,id})=>
     <IconButton sx={{
         padding:'4px',
         borderRadius:'5px',
-        color:'red',
+        color:'gray',
         margin:'3px',
         marginBottom:'30px'
         

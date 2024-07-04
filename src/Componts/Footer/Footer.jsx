@@ -41,7 +41,7 @@ const FooterIcon=({Icon,iconText,clickFun})=>{
   const clickHandle= (Home,Category,Profile)=>{
     const obj=
     {
-      Home:true,
+      Home:false,
       Category:false,
       Profile:false
     }

@@ -46,7 +46,7 @@ const productArr=[{
     productTitle:'Coffe',
 },]
 
-const Products = ({title}) => {
+const Products = ({title}) => {// title parameter pass from home .jsx
   return (
     <section style={{
       boxShadow:'rgba(0, 0, 0, 0.35) 0px 5px 15px',
@@ -68,7 +68,7 @@ const Products = ({title}) => {
       >
         {productArr.map(({imageUrl,price,productTitle},index)=>
         <SwiperSlide key={index}>
-          <ProductUnit 
+          <ProductUnit  // productunit is functional componts and we are seding paramters to it 
           imageUrl={imageUrl} 
           price={price} 
           productTitle={productTitle}
@@ -82,7 +82,7 @@ const Products = ({title}) => {
 
 export default Products;
 
-const ProductUnit=({imageUrl,price,productTitle,id})=>
+const ProductUnit=({imageUrl,price,productTitle,id})=>// this product title parameter is coimng from productArr
     <IconButton sx={{
         padding:'4px',
         borderRadius:'5px',

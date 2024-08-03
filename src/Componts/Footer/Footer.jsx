@@ -6,20 +6,20 @@ import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const [whoIsClick,setWhoIsClicke]=useState({
-    Home:true,
+  const [whoIsClick,setWhoIsClicke]=useState({ // define a stste to handle footer 3 buttons
+    Home:false,
     Category:false,
     Profile:false
 
 })
   return (
     <footer className='fixed bottom-0 left-0 z-[100] drop-shadow-header-shadow w-full
-    p-3 px-2 bg-my-background flex items-center justify-between'>
+    p-3 px-2 bg-my-background flex items-center justify-between'> {/*footer desighn by using tailkwind css*/}
 
-      <FooterIcon 
+      <FooterIcon // thjis is normal functional compont .it can used in same page as well
         clickFun={{whoIsClick,setWhoIsClicke}}
         Icon={HomeIcon} 
-        iconText='Home'/>
+        iconText='Home'/> 
     
       <FooterIcon 
         clickFun={{whoIsClick,setWhoIsClicke}}
@@ -36,36 +36,41 @@ const Footer = () => {
 }
 
 export default Footer;
-const FooterIcon=({Icon,iconText,clickFun})=>{
+const FooterIcon=({Icon,iconText,clickFun})=>{ // createed a function because all 3 Icon got repeted  
 
-  const clickHandle= (Home,Category,Profile)=>{
-    const obj=
+  const clickHandle= ()=>{
+    
+    const obj= // created a obj and initially all propety false 
     {
       Home:false,
       Category:false,
       Profile:false
     }
 
-    if(iconText==='Category'){
+    if (iconText==='Home'){
+      obj.Home = true   // acssening the obj and relevent to the iconText it gonna make true 
+      
+      
+    }else if(iconText==='Category'){
+      
       obj.Category=true
-      obj.Home=false
-      obj.Profile=false
+     
     }else if (iconText==='Profile'){
-      obj.Home=false
-      obj.Category=false
+     
       obj.Profile=true
     }
-    clickFun.setWhoIsClicke(obj)
+    console.log(obj);
+    clickFun.setWhoIsClicke(obj) // 
   }
     
 
 
  return(
    <Link to={iconText==='Home'?'/':`/${String(iconText).toLowerCase()}`}>
-    <IconButton 
+    <IconButton // wrapped using iconbutton to give it a click
     sx={{
      padding:'4px',
-     paddingTop:'0',
+     paddingTop:'0', // icon button desighn by usen mui 
      borderRadius:'5px',
      color:'#800909',
      }}

@@ -12,16 +12,16 @@ const router= createBrowserRouter([
     {
         path:'/',
         element:<MainLayout/>,
-        children:[
+        children:[ // all nested routes called as childrean 
             {
-                index:true,
+                index:true, // in here we are activitate the index .index mean if we go / it goes to home 
                 element:<Home/>,
             },
             {
-                path:'category',
+                path:'category',// all the routes in side the MainLayout goes as the outlet 
                 children:[
                    {
-                    index:true,
+                    index:true, //When the path is /category, it shows the Categoty component.
                     element:<Categoty/>
                    },
                    {
@@ -41,11 +41,11 @@ const router= createBrowserRouter([
             },
             
             {
-                element:<UserProtected/>,
+                element:<UserProtected/>, // user is only comeing when the logic inside Userprocted excuted 
                 children:[
                     {
                         path:'profile',
-                        element:<User/>
+                        element:<User/> // this is go as a outlet to the Userprotected 
                     }
                 ]
             }

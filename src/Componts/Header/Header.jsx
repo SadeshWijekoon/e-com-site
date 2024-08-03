@@ -15,7 +15,7 @@ const Header = () => {
      p-2 px-2 bg-my-background flex items-center justify-between'>
       {/*header left*/}
       <div className='flex items-center'>
-        <IconButton >  {/* wrap the menuicon by using IconButton*/}
+        <IconButton >  {/* wrap the menuicon by using IconButton. it gives a click effect*/}
         <MenuIcon sx={{
         color: '#4c4f4d',
         '&:hover': {
@@ -36,10 +36,10 @@ const Header = () => {
         <div style={{
             backgroundColor: window.innerWidth<640? 
              isSearch ?  
-               ' #f8dddd':  /* inputbox bg coler applying by using some logic same as above*/
+               ' #f8dddd':  /* inputbox bg coler applying by using some logic same as above. this css apply baed on the given logic*/
                ' inherit':
                '#f8dddd'
-           }} className='overflow-hidden ml-2 flex items-center rounded-full bg-[#f8dddd]' > {/* bg-[#e0c3c3]*/}
+           }} className='overflow-hidden ml-2 flex items-center rounded-full bg-[#f8dddd]' > {/*in here use tailwind css to desgind the input box background*/} 
           <input 
            type='text' 
            placeholder='Search' 

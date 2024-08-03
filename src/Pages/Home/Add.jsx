@@ -3,7 +3,7 @@ import { Autoplay } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 
-
+// in this componts use swiper js 
 const adsElements = [
   {
     imageUrl: 'https://images6.alphacoders.com/134/1348908.jpeg',
@@ -33,10 +33,10 @@ const Add = () => {
       }}
       navigation={true}
       modules={[Autoplay]}
-      className='rounded-lg overflow-hidden'>
+      className='rounded-lg overflow-hidden'> {/*swiper desighns  */}
 
        {adsElements.map(({imageUrl},index)=>
-       <SwiperSlide key={index}>
+       <SwiperSlide key={index}>  {/*wrap it by using swiperslide to ensure that it automatically swipe in the screen */}
           <AddUnit   imageUrl={imageUrl} id={index}/>
       </SwiperSlide>)}
        
